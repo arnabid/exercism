@@ -18,13 +18,27 @@
 #         return str(number)
 
 
-# Iteration 2
+# # Iteration 2
+# def convert(number):
+#     s = ""
+#     if number % 3 == 0:
+#         s += "Pling"
+#     if number % 5 == 0:
+#         s += "Plang"
+#     if number % 7 == 0:
+#         s += "Plong"
+#     return s if s else f"{number}"
+
+# Iteration 3
+# makes the code more concise and extensible
+# easier to add extra factors later
 def convert(number):
     s = ""
-    if number % 3 == 0:
-        s += "Pling"
-    if number % 5 == 0:
-        s += "Plang"
-    if number % 7 == 0:
-        s += "Plong"
+    factors = [3, 5, 7]
+    names = ["Pling", "Plang", "Plong"]
+
+    for index, f in enumerate(factors):
+        if number % f == 0:
+            s += names[index]
+    
     return s if s else f"{number}"
